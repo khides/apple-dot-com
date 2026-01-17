@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@khides/minimal-ds':
-        specifier: file:../minimal-ds
-        version: file:../minimal-ds(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        specifier: ^0.2.1
+        version: 0.2.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       next:
         specifier: ^15.1.0
         version: 15.5.9(@playwright/test@1.57.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -442,8 +442,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@khides/minimal-ds@file:../minimal-ds':
-    resolution: {directory: ../minimal-ds, type: directory}
+  '@khides/minimal-ds@0.2.1':
+    resolution: {integrity: sha512-mri3UXSjTBO05sFtXxQqYXMhRduHQPPfNNZaRJN3qRom5eWVnpMcr5Ma4m/G6RjC2KD8KmiEwtBpWRnOU2ZX7w==, tarball: https://npm.pkg.github.com/download/@khides/minimal-ds/0.2.1/0ab51ad13c2981a3583970eb21eaaadeda35a04d}
     peerDependencies:
       react: ^18.0.0 || ^19.0.0
       react-dom: ^18.0.0 || ^19.0.0
@@ -2268,7 +2268,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@khides/minimal-ds@file:../minimal-ds(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@khides/minimal-ds@0.2.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)

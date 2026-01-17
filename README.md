@@ -1,8 +1,27 @@
 # apple-dot-com
 
-Apple.comトップページを再現したNext.jsアプリケーションです。VRT（Visual Regression Testing）環境を含んでいます。
+ミニマルなデザインシステムを使用したNext.jsアプリケーションです。VRT（Visual Regression Testing）環境を含んでいます。
+
+## 特徴
+
+- [@khides/minimal-ds](https://github.com/khides/minimal-ds) デザインシステムを使用
+- Playwright によるVisual Regression Testing
+- Figmaデザインとの比較機能
 
 ## セットアップ
+
+### 前提条件
+
+GitHub Packagesからパッケージを取得するため、`~/.npmrc`にPersonal Access Token（PAT）の設定が必要です。
+
+```bash
+# ~/.npmrc に追加
+//npm.pkg.github.com/:_authToken=ghp_xxxxx
+```
+
+PATには `read:packages` スコープが必要です。
+
+### インストール
 
 ```bash
 # 依存関係のインストール
@@ -53,18 +72,10 @@ pnpm tsx e2e/scripts/compare-figma.ts
 ```
 apple-dot-com/
 ├── src/
-│   ├── app/
-│   │   ├── layout.tsx
-│   │   ├── page.tsx
-│   │   └── globals.css
-│   ├── components/
-│   │   ├── Button/
-│   │   ├── NavHeader/
-│   │   ├── HeroSection/
-│   │   ├── ProductCard/
-│   │   └── Footer/
-│   └── lib/
-│       └── cn.ts
+│   └── app/
+│       ├── layout.tsx
+│       ├── page.tsx
+│       └── globals.css
 ├── e2e/
 │   ├── baselines/
 │   │   └── figma/           # Figmaエクスポート画像
@@ -73,6 +84,19 @@ apple-dot-com/
 │   └── visual.spec.ts       # VRTテスト
 └── playwright.config.ts
 ```
+
+## デザインシステム
+
+このプロジェクトは `@khides/minimal-ds` パッケージのコンポーネントを使用しています。
+
+```tsx
+import { NavHeader, HeroSection, ProductCard, Footer } from '@khides/minimal-ds'
+import '@khides/minimal-ds/styles'
+```
+
+## 注意事項
+
+このプロジェクトは教育・学習目的で作成されました。
 
 ## ライセンス
 
