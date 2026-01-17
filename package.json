@@ -10,7 +10,11 @@
     "typecheck": "tsc --noEmit",
     "test:e2e": "playwright test",
     "test:e2e:update": "playwright test --update-snapshots",
-    "test:e2e:ui": "playwright test --ui"
+    "test:e2e:ui": "playwright test --ui",
+    "figma:fetch": "tsx e2e/scripts/compare-figma-dynamic.ts --fetch",
+    "figma:capture": "tsx e2e/scripts/compare-figma-dynamic.ts --capture",
+    "figma:compare": "tsx e2e/scripts/compare-figma-dynamic.ts --compare",
+    "figma:all": "tsx e2e/scripts/compare-figma-dynamic.ts"
   },
   "dependencies": {
     "@khides/minimal-ds": "^0.2.1",
@@ -26,6 +30,7 @@
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "autoprefixer": "^10.4.20",
+    "dotenv": "^17.2.3",
     "eslint": "^9.17.0",
     "eslint-config-next": "^15.1.0",
     "pixelmatch": "^6.0.0",
