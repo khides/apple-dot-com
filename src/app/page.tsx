@@ -15,8 +15,10 @@ export default function Home() {
           tagline="Hello, Apple Intelligence."
           theme="light"
           backgroundImage="/images/hero/iphone-16-pro.png"
+          imagePosition="bottom"
           primaryAction={{ label: 'Learn more', href: '/iphone-16-pro' }}
           secondaryAction={{ label: 'Shop iPhone', href: '/shop/buy-iphone' }}
+          className="!min-h-[580px] lg:!min-h-[600px]"
         />
 
         {/* Apple Watch Series 11 */}
@@ -28,8 +30,10 @@ export default function Home() {
           layout="full-width"
           image="/images/products/apple-watch-series-11.png"
           imageAlt="Apple Watch Series 11"
+          imagePosition="center"
           primaryAction={{ label: 'Learn more', href: '/apple-watch-series-11' }}
           secondaryAction={{ label: 'Shop Apple Watch', href: '/shop/buy-watch' }}
+          className="!min-h-[450px] lg:!min-h-[500px]"
         />
 
         {/* iPad Air - Full Width */}
@@ -40,8 +44,10 @@ export default function Home() {
           layout="full-width"
           image="/images/products/ipad-air.png"
           imageAlt="iPad Air"
+          imagePosition="center"
           primaryAction={{ label: 'Learn more', href: '/ipad-air' }}
           secondaryAction={{ label: 'Shop iPad Air', href: '/shop/buy-ipad/ipad-air' }}
+          className="!min-h-[450px] lg:!min-h-[500px]"
         />
 
         {/* Grid Section 1: MacBook Pro + Apple Watch Ultra */}
@@ -54,8 +60,10 @@ export default function Home() {
             layout="half-width"
             image="/images/products/macbook-pro.png"
             imageAlt="MacBook Pro"
+            imagePosition="center"
             primaryAction={{ label: 'Learn more', href: '/macbook-pro' }}
             secondaryAction={{ label: 'Shop MacBook Pro', href: '/shop/buy-mac/macbook-pro' }}
+            className="!min-h-[500px] lg:!min-h-[550px]"
           />
 
           {/* Apple Watch Ultra 3 */}
@@ -67,8 +75,10 @@ export default function Home() {
             layout="half-width"
             image="/images/products/apple-watch-ultra-3.png"
             imageAlt="Apple Watch Ultra 3"
+            imagePosition="center"
             primaryAction={{ label: 'Learn more', href: '/apple-watch-ultra' }}
             secondaryAction={{ label: 'Shop Apple Watch Ultra', href: '/shop/buy-watch/apple-watch-ultra' }}
+            className="!min-h-[500px] lg:!min-h-[550px]"
           />
 
           {/* AirPods Pro 3 */}
@@ -79,8 +89,10 @@ export default function Home() {
             layout="half-width"
             image="/images/products/airpods-pro-3.png"
             imageAlt="AirPods Pro 3"
+            imagePosition="center"
             primaryAction={{ label: 'Learn more', href: '/airpods-pro' }}
             secondaryAction={{ label: 'Buy', href: '/shop/product/airpods-pro' }}
+            className="!min-h-[500px] lg:!min-h-[550px]"
           />
 
           {/* Apple Fitness+ */}
@@ -91,12 +103,14 @@ export default function Home() {
             layout="half-width"
             image="/images/products/apple-fitness+.png"
             imageAlt="Apple Fitness+"
+            imagePosition="center"
             primaryAction={{ label: 'Learn more', href: '/apple-fitness-plus' }}
             secondaryAction={{ label: 'Try it free', href: '/shop/product/apple-fitness-plus' }}
+            className="!min-h-[500px] lg:!min-h-[550px]"
           />
         </div>
 
-        {/* Grid Section 2: Trade In + Apple Card */}
+        {/* Grid Section 2: Trade In + Apple Card - 小さめのカード */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 p-3">
           {/* Apple Trade In */}
           <ProductCard
@@ -106,7 +120,9 @@ export default function Home() {
             layout="half-width"
             image="/images/products/apple-trade-in.png"
             imageAlt="Apple Trade In"
+            imagePosition="center"
             primaryAction={{ label: 'See what your device is worth', href: '/shop/trade-in' }}
+            className="!min-h-[400px] lg:!min-h-[450px]"
           />
 
           {/* Apple Card */}
@@ -117,8 +133,10 @@ export default function Home() {
             layout="half-width"
             image="/images/products/apple-card.png"
             imageAlt="Apple Card"
+            imagePosition="center"
             primaryAction={{ label: 'Learn more', href: '/apple-card' }}
             secondaryAction={{ label: 'Apply now', href: '/apple-card/apply' }}
+            className="!min-h-[400px] lg:!min-h-[450px]"
           />
         </div>
 
@@ -126,11 +144,12 @@ export default function Home() {
         <FeaturePromoSection
           subtitle="Endless entertainment."
           title="Watch the film."
-          backgroundImage="/images/carousel/watch-the-film.png"
+          backgroundImage="/images/carousel/apple-arcade.png"
           theme="dark"
           size="large"
           primaryAction={{ label: 'Watch the film', href: '/watch' }}
           secondaryAction={{ label: 'Learn more', href: '/entertainment' }}
+          className="!min-h-[550px] lg:!min-h-[600px]"
         />
 
         {/* PLURIBUS Section */}
@@ -142,6 +161,7 @@ export default function Home() {
           theme="light"
           size="default"
           primaryAction={{ label: 'Stream now', href: '/tv' }}
+          className="!min-h-[400px] lg:!min-h-[450px]"
         />
 
         {/* Services Carousel */}
@@ -191,10 +211,11 @@ export default function Home() {
           theme="dark"
           size="large"
           textAlign="center"
+          className="!min-h-[550px] lg:!min-h-[600px]"
         />
       </main>
 
-      <Footer />
+      <Footer theme="dark" className="!min-h-[550px] lg:!min-h-[600px]" />
     </div>
   )
 }
