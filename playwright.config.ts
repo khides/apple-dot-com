@@ -2,6 +2,7 @@ import { defineConfig, devices } from '@playwright/test'
 
 export default defineConfig({
   testDir: './e2e',
+  snapshotDir: './e2e/baselines',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
@@ -14,12 +15,16 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: {
+        ...devices['Desktop Chrome'],
+        deviceScaleFactor: 2,  // @2x解像度でFigmaベースラインと一致させる
+      },
     },
     {
       name: 'mobile',
       use: {
         ...devices['Pixel 5'],
+        deviceScaleFactor: 2,
       },
     },
   ],

@@ -19,7 +19,7 @@ export const figmaConfig: FigmaConfig = {
     {
       nodeId: '1-591',  // "1920w light" フレーム
       name: 'homepage-desktop',
-      viewport: { width: 1920, height: 900 }  // fullPageでキャプチャするので高さは初期値
+      viewport: { width: 1920, height: 7019.98 }  
     },
     // 後で追加可能:
     // { nodeId: 'xxx', name: 'homepage-tablet', viewport: { width: 768, height: 1024 } },

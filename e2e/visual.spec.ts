@@ -1,46 +1,20 @@
-import { test, expect } from '@playwright/test'
+import { test, expect } from '@chromatic-com/playwright'
+import { figmaConfig } from './figma.config'
 
-test.describe('Visual Regression Tests', () => {
-  test('homepage matches baseline', async ({ page }) => {
-    await page.goto('/')
-    await page.waitForLoadState('networkidle')
-    await expect(page).toHaveScreenshot('homepage-full.png', { fullPage: true })
-  })
-
-  test('hero section matches baseline', async ({ page }) => {
-    await page.goto('/')
-    await page.waitForLoadState('networkidle')
-    const hero = page.locator('main section').first()
-    await expect(hero).toHaveScreenshot('hero-section.png')
-  })
-
-  test('navigation header matches baseline', async ({ page }) => {
-    await page.goto('/')
-    await page.waitForLoadState('networkidle')
-    const nav = page.locator('nav')
-    await expect(nav).toHaveScreenshot('nav-header.png')
-  })
-
-  test('footer matches baseline', async ({ page }) => {
-    await page.goto('/')
-    await page.waitForLoadState('networkidle')
-    const footer = page.locator('main').locator('div').last()
-    await expect(footer).toHaveScreenshot('footer.png')
-  })
-})
-
-test.describe('Responsive Visual Tests', () => {
-  test('homepage on mobile', async ({ page }) => {
-    await page.setViewportSize({ width: 375, height: 667 })
-    await page.goto('/')
-    await page.waitForLoadState('networkidle')
-    await expect(page).toHaveScreenshot('homepage-mobile.png', { fullPage: true })
-  })
-
-  test('homepage on tablet', async ({ page }) => {
-    await page.setViewportSize({ width: 768, height: 1024 })
-    await page.goto('/')
-    await page.waitForLoadState('networkidle')
-    await expect(page).toHaveScreenshot('homepage-tablet.png', { fullPage: true })
-  })
+test.describe('Figma VRT', () => {
+  for (const frame of figmaConfig.frames) {
+    test(`${frame.name} matches Figma baseline`, async ({ page }) => {
+      // Figmaベースラインは@2x解像度なので、viewportも2倍に設定
+      await page.setViewportSize({
+        width: frame.viewport.width * 2,
+        height: Math.ceil(frame.viewport.height) * 2,
+      })
+      await page.goto('/')
+      await page.waitForLoadState('networkidle')
+      await expect(page).toHaveScreenshot(`${frame.name}.png`, {
+        fullPage: true,
+        timeout: 30000,  // 大きな画像なのでタイムアウトを延長
+      })
+    })
+  }
 })

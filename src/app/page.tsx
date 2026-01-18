@@ -1,6 +1,6 @@
 'use client'
 
-import { NavHeader, HeroSection, ProductCard, Footer } from '@khides/minimal-ds'
+import { NavHeader, HeroSection, ProductCard, Footer, FeaturePromoSection, ServiceCarousel } from '@khides/minimal-ds'
 import '@khides/minimal-ds/styles'
 
 export default function Home() {
@@ -14,73 +14,184 @@ export default function Home() {
           title="iPhone 16 Pro"
           tagline="Hello, Apple Intelligence."
           theme="light"
+          backgroundImage="/images/hero/iphone-16-pro.png"
           primaryAction={{ label: 'Learn more', href: '/iphone-16-pro' }}
           secondaryAction={{ label: 'Shop iPhone', href: '/shop/buy-iphone' }}
         />
 
-        {/* Apple Watch */}
+        {/* Apple Watch Series 11 */}
         <ProductCard
           subtitle="WATCH"
-          title="SERIES 10"
+          title="SERIES 11"
           tagline="Thinnest ever."
           theme="light"
           layout="full-width"
-          primaryAction={{ label: 'Learn more', href: '/apple-watch-series-10' }}
+          image="/images/products/apple-watch-series-11.png"
+          imageAlt="Apple Watch Series 11"
+          primaryAction={{ label: 'Learn more', href: '/apple-watch-series-11' }}
           secondaryAction={{ label: 'Shop Apple Watch', href: '/shop/buy-watch' }}
         />
 
-        {/* MacBook Pro */}
+        {/* iPad Air - Full Width */}
         <ProductCard
-          title="MacBook Pro"
-          tagline="Mind-blowing. Head-turning."
-          theme="dark"
+          subtitle="iPad Air"
+          title="Fresh Air."
+          theme="light"
           layout="full-width"
-          primaryAction={{ label: 'Learn more', href: '/macbook-pro' }}
-          secondaryAction={{ label: 'Shop MacBook Pro', href: '/shop/buy-mac/macbook-pro' }}
+          image="/images/products/ipad-air.png"
+          imageAlt="iPad Air"
+          primaryAction={{ label: 'Learn more', href: '/ipad-air' }}
+          secondaryAction={{ label: 'Shop iPad Air', href: '/shop/buy-ipad/ipad-air' }}
         />
 
-        {/* Grid Section */}
+        {/* Grid Section 1: MacBook Pro + Apple Watch Ultra */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 p-3">
-          {/* iPad Pro */}
+          {/* MacBook Pro */}
           <ProductCard
-            subtitle="iPad Pro"
-            title="Unbelievably thin. Incredibly powerful."
+            title="MacBook Pro"
+            tagline="Mind-blowing. Head-turning."
             theme="dark"
             layout="half-width"
-            primaryAction={{ label: 'Learn more', href: '/ipad-pro' }}
-            secondaryAction={{ label: 'Shop iPad Pro', href: '/shop/buy-ipad/ipad-pro' }}
+            image="/images/products/macbook-pro.png"
+            imageAlt="MacBook Pro"
+            primaryAction={{ label: 'Learn more', href: '/macbook-pro' }}
+            secondaryAction={{ label: 'Shop MacBook Pro', href: '/shop/buy-mac/macbook-pro' }}
           />
 
-          {/* iPad Air */}
+          {/* Apple Watch Ultra 3 */}
           <ProductCard
-            subtitle="iPad Air"
-            title="Fresh Air."
+            subtitle="WATCH"
+            title="ULTRA 3"
+            tagline="Next level adventure."
             theme="light"
             layout="half-width"
-            primaryAction={{ label: 'Learn more', href: '/ipad-air' }}
-            secondaryAction={{ label: 'Shop iPad Air', href: '/shop/buy-ipad/ipad-air' }}
+            image="/images/products/apple-watch-ultra-3.png"
+            imageAlt="Apple Watch Ultra 3"
+            primaryAction={{ label: 'Learn more', href: '/apple-watch-ultra' }}
+            secondaryAction={{ label: 'Shop Apple Watch Ultra', href: '/shop/buy-watch/apple-watch-ultra' }}
           />
 
-          {/* AirPods Pro */}
+          {/* AirPods Pro 3 */}
           <ProductCard
-            title="AirPods Pro 2"
+            title="AirPods Pro 3"
             tagline="Adaptive Audio. Now playing."
             theme="light"
             layout="half-width"
+            image="/images/products/airpods-pro-3.png"
+            imageAlt="AirPods Pro 3"
             primaryAction={{ label: 'Learn more', href: '/airpods-pro' }}
             secondaryAction={{ label: 'Buy', href: '/shop/product/airpods-pro' }}
           />
 
-          {/* AirPods Max */}
+          {/* Apple Fitness+ */}
           <ProductCard
-            title="AirPods Max"
-            tagline="Striking. All day."
-            theme="dark"
+            subtitle="fitness+"
+            title="A new satisfying satisfying way to start."
+            theme="light"
             layout="half-width"
-            primaryAction={{ label: 'Learn more', href: '/airpods-max' }}
-            secondaryAction={{ label: 'Buy', href: '/shop/product/airpods-max' }}
+            image="/images/products/apple-fitness+.png"
+            imageAlt="Apple Fitness+"
+            primaryAction={{ label: 'Learn more', href: '/apple-fitness-plus' }}
+            secondaryAction={{ label: 'Try it free', href: '/shop/product/apple-fitness-plus' }}
           />
         </div>
+
+        {/* Grid Section 2: Trade In + Apple Card */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 p-3">
+          {/* Apple Trade In */}
+          <ProductCard
+            subtitle="Apple Trade In"
+            title="Get $170-$630 in credit toward iPhone 16 Pro."
+            theme="light"
+            layout="half-width"
+            image="/images/products/apple-trade-in.png"
+            imageAlt="Apple Trade In"
+            primaryAction={{ label: 'See what your device is worth', href: '/shop/trade-in' }}
+          />
+
+          {/* Apple Card */}
+          <ProductCard
+            subtitle="Apple Card"
+            title="Get up to 3% Daily Cash back with every purchase."
+            theme="light"
+            layout="half-width"
+            image="/images/products/apple-card.png"
+            imageAlt="Apple Card"
+            primaryAction={{ label: 'Learn more', href: '/apple-card' }}
+            secondaryAction={{ label: 'Apply now', href: '/apple-card/apply' }}
+          />
+        </div>
+
+        {/* Endless Entertainment Section */}
+        <FeaturePromoSection
+          subtitle="Endless entertainment."
+          title="Watch the film."
+          backgroundImage="/images/carousel/watch-the-film.png"
+          theme="dark"
+          size="large"
+          primaryAction={{ label: 'Watch the film', href: '/watch' }}
+          secondaryAction={{ label: 'Learn more', href: '/entertainment' }}
+        />
+
+        {/* PLURIBUS Section */}
+        <FeaturePromoSection
+          title="PLURIBUS"
+          subtitle="Apple TV+"
+          backgroundImage="/images/carousel/apple-tv.png"
+          backgroundColor="#f5c518"
+          theme="light"
+          size="default"
+          primaryAction={{ label: 'Stream now', href: '/tv' }}
+        />
+
+        {/* Services Carousel */}
+        <ServiceCarousel
+          items={[
+            {
+              title: 'Apple TV+',
+              subtitle: 'Stream exclusive shows and movies',
+              image: '/images/carousel/apple-tv.png',
+              imageAlt: 'Apple TV+',
+              href: '/tv',
+              theme: 'dark',
+            },
+            {
+              title: 'Apple Music',
+              subtitle: '100 million songs',
+              image: '/images/carousel/apple-music.png',
+              imageAlt: 'Apple Music',
+              href: '/music',
+              theme: 'dark',
+            },
+            {
+              title: 'Apple Arcade',
+              subtitle: 'Unlimited games',
+              image: '/images/carousel/apple-arcade.png',
+              imageAlt: 'Apple Arcade',
+              href: '/arcade',
+              theme: 'dark',
+            },
+            {
+              title: 'Apple Fitness+',
+              subtitle: 'A new way to get fit',
+              image: '/images/carousel/apple-fitnes+.png',
+              imageAlt: 'Apple Fitness+',
+              href: '/fitness',
+              theme: 'dark',
+            },
+          ]}
+          columns={4}
+          theme="dark"
+        />
+
+        {/* More from Apple Section */}
+        <FeaturePromoSection
+          title="More from Apple"
+          backgroundImage="/images/other/more-from-apple.png"
+          theme="dark"
+          size="large"
+          textAlign="center"
+        />
       </main>
 
       <Footer />
